@@ -51,11 +51,11 @@ const App = () => {
   const stageRef = useRef(null);
 
   useEffect(() => {
-    console.log(stageRef.current);
+    console.log(stageRef.current.canvas.getContext());
   }, []);
   return (
-    <Stage ref={stageRef} width={window.innerWidth} height={window.innerHeight}>
-      <Layer width={window.innerWidth} height={"auto"}>
+    <Stage width={window.innerWidth} height={window.innerHeight}>
+      <Layer ref={stageRef} width={window.innerWidth} height={"auto"}>
         <MaskImage src="/images/original.jpg" />
         <MaskImage src={"/images/mask_1.png"} />
         <MaskImage src={"/images/mask_2.png"} />
